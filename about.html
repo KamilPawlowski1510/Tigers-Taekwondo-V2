@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/2.0.15/plyr.css">
+    <title>Tigers Taekwondo Club</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class = "ui grid stackable container">
+    <br>
+<nav class="ui top attached tabular menu">
+  <img class="ui image" src="images/logo.png" alt="Logo" height="70">
+  <a class="item" href= "index.html">Welcome</a>
+  <a class="item" href= "competitions.html">Competitions</a>
+  <a class="item" href= "seminar.html">Seminar</a>
+  <a class="item" href= "register.html">Register</a>
+  <a class="active item" href= "about.html">About</a>
+  <img class="ui image kick" src="images/kick.png" alt="Kicking Man" height="70">
+</nav>
+    
+    
+    
+  <header class="ui sixteen wide column">
+    <h1>Plyr</h1>
+    </header>
+<main class="ui sixteen wide column">
+    <p>This is the plugin that we didn't cover in class. It allows you to play videos from Youtube and Vimeo as well as regular videos and audios. To use it you need to use either a div, video or audio tag. Then you need to assign an id and a datatype. For both Youtube and Vimeo you create a div that needs to have a data-video-id tag with the appropriate video id (this can be found in the url of a video). Audio and video both need a source and a type (for example audio/mp3). Of course you need to link the appropriate javascript and css files. Lastly you need a single line of javascript to set up the video/audio using the id you assigned earlier.</p>
+    <div id='plyr-youtube' data-type="youtube" data-video-id="TKEbws4QhEk"></div><br>
+    <div id="plyr-vimeo" data-type="vimeo" data-video-id="89334994"></div><br>
+    <video id="plyr-video" poster="videos/video.mp4" controls><source src="videos/video.mp4" type="video/mp4"></video><br>
+    <audio id="plyr-audio" controls><source src="audio/alarm.mp3" type="audio/mp3"></audio>
+</main>  
+    
+    
+</div>
+
+<br>
+<footer class="ui container">
+    <p style="float: left">Tigers Taewkwondo Club | All Rights Reserved 2023</p>
+    <a href="https://twitter.com"><i class="big black twitter icon" style="float: right"></i></a>
+    <a href="https://facebook.com"><i class="big black facebook icon" style="float: right"></i></a>
+    <a href="https://instagram.com"><i class="big black instagram icon" style="float: right"></i></a>
+
+</footer>
+    
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+  crossorigin="anonymous">
+</script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<script src="https://cdn.plyr.io/2.0.15/plyr.js"></script>
+<script src="js/script.js"></script>
+    
+<script>
+$(() => {
+    plyr.setup("#plyr-youtube");
+    plyr.setup("#plyr-vimeo");
+    plyr.setup("#plyr-video");
+    plyr.setup("#plyr-audio");
+})
+</script>
+    
+</body>
+</html>

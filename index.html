@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <title>Tigers Taekwondo Club</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class = "ui grid stackable container">
+    <br>
+<nav class="ui top attached tabular menu">
+  <img class="ui image" src="images/logo.png" alt="Logo" height="70">
+  <a class="active item" href= "index.html">Welcome</a>
+  <a class="item" href= "competitions.html">Competitions</a>
+  <a class="item" href= "seminar.html">Seminar</a>
+  <a class="item" href= "register.html">Register</a>
+  <a class="item" href= "about.html">About</a>
+  <img class="ui image kick" src="images/kick.png" alt="Kicking Man" height="70">
+</nav>
+    
+    
+    
+  <header class="ui sixteen wide column">
+    <h1>Welcome to the Tigers Taewkwondo Club</h1>
+    <h3>Step into the Dojang</h3>
+    </header>
+<main class="ui sixteen wide column">
+    <p>Taekwondo, transalating literally into <em><q>art of kicking and punching</q></em>, is a martial art hailing from Korea. It was developed during the 1940s and 50s and is based on the earlier form of Korean self-defense known as tae kyon and on karate. Known worldwide for its spectacular kicks and tournaments it is a sport growing in popularity and for good reason.</p>
+    <p class="more">We here at Tigers have been practicing Taekwondo here in Waterford since 2004 and are proud of our school of 100+ students. We've competed in every tier of competition bringing golds anywhere from regional all the way to international competitions. We honor the Five Tenets of Taekwondo (courtesy, integrity, perseverance, self-control and indomitable spirit) as well as the hidden sixth one, to remember to enjoy yourself!
+    </p>
+    <button class="ui mini button">Read More</button>
+    <h3 style="text-align: center;">Meet Your Instructors</h3>
+
+    <div class="ui link cards">
+
+    <div class="ui centered card">
+  <div class="image">
+    <img src="images/mark.jpg" alt="Master Mark">
+  </div>
+  <div class="content">
+    <a class="header">Mark Zuckerberg</a>
+    <div class="meta">
+      <span class="date">Began Learning in 1996</span>
+    </div>
+    <div class="description">
+      What he lacks in the ability to literally seem human he makes up for with his deadly kicks.
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="hand rock outline icon"></i>
+      4th Degree Blackbelt
+    </a>
+  </div>
+</div>
+    
+    <div class="ui centered card">
+  <div class="image">
+    <img src="images/barack.jpg" alt="Master Barack">
+  </div>
+  <div class="content">
+    <a class="header">Barack Obama</a>
+    <div class="meta">
+      <span class="date">Began Learning in 1992</span>
+    </div>
+    <div class="description">
+      If you ever think he's treating you harshly just remember how he treated the people of Iraq.
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="hand rock outline icon"></i>
+      6th Degree Blackbelt
+    </a>
+  </div>
+</div>
+    
+</div>
+    
+</main>
+
+</div>
+
+<br>
+<footer class="ui container">
+    <p style="float: left">Tigers Taewkwondo Club | All Rights Reserved 2023</p>
+    <a href="https://twitter.com"><i class="big black twitter icon" style="float: right"></i></a>
+    <a href="https://facebook.com"><i class="big black facebook icon" style="float: right"></i></a>
+    <a href="https://instagram.com"><i class="big black instagram icon" style="float: right"></i></a>
+
+</footer>
+    
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+  crossorigin="anonymous">
+</script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<script src="js/script.js"></script>
+    
+<script>
+$(() => {
+$(".more").css("display", "none")
+$("button").on("click", function(){
+    
+    
+  if ($(".more").css("display") === "block") {
+    $(".more").css("display", "none")
+      $("button").text("Read More...")
+  } 
+    else {
+    $(".more").css("display", "block")
+    $("button").text("Read Less...")
+  }
+    
+});
+
+})
+</script>
+    
+</body>
+</html>
+

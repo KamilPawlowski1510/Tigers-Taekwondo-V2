@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <title>Tigers Taekwondo Club</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class = "ui grid stackable container">
+    <br>
+<nav class="ui top attached tabular menu">
+  <img class="ui image" src="images/logo.png" alt="Logo" height="70">
+  <a class="item" href= "index.html">Welcome</a>
+  <a class="item" href= "competitions.html">Competitions</a>
+  <a class="item" href= "seminar.html">Seminar</a>
+  <a class="active item" href= "register.html">Register</a>
+  <a class="item" href= "about.html">About</a>
+  <img class="ui image kick" src="images/kick.png" alt="Kicking Man" height="70">
+</nav>
+    
+   <header class="ui sixteen wide column">
+    <h1>Register</h1>
+    <h3>Your Own Opportunity to Awaken Your Inner Tiger</h3>
+      <p>Even though we take great pride in our organisation, please don't feel intimidated. Even with 100+ members our club is still growing and we get newcomers all the time. If you liked any of what you saw don't be afraid to come to class and try it out. The first class is completely free so what are you waiting for?</p>
+    </header>
+<main>
+     <form action="submit.html" method="get" id="booking" class="ui form">
+                    
+                    <div class="inline field">
+                        <label for="name" class="two wide field">Full Name</label>
+                        <input type="text" name="name" id="name" class="six wide field" autofocus required pattern="^(\w\w+)\s(\w+)$" title="Please enter your full name, include proper capitalization">
+                    </div>
+
+                    <div class="inline field">
+                        <label for="email" class="two wide field">Email Address</label>
+                        <input type="email" name="email" id="email" class="six wide field" required pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$" title="Please enter a suitable email address">
+                    </div>
+
+                    <p><b>Have you ever practiced a martial art before?</b></p>
+                    
+                    <div class="inline field">
+                        <div class="ui radio checkbox"><input type="radio" name="exp" id="yes" value="yes" required><label for="yes"> Yes</label></div><br>
+                        <div class="ui radio checkbox"><input type="radio" name="exp" id="no" value="no" required> <label for="no"> No</label></div>
+                    </div>
+
+                    <div class="inline field years">
+                    <label for = "experience" class="two wide field">For how many years did you practice?</label>
+                    <input type="number" name="experience" id="experience" class="six wide field" title="Please enter how many years of experience you have" min = "1" max = "100">
+                    </div>
+                    
+                    <div class="inline field">
+                    <label for = "dob" class="two wide field">Date of Birth</label>
+                    <input type="date" name="dob" id="dob" class="six wide field" title="Please enter your Date of Birth" required max="2019-12-31">
+                    </div>
+                    
+                    <div class="inline field">
+                    <label for = "dobok" class="two wide field">Do You Need a Dobok?</label>
+                    <select class="six wide field" title="Do You Own a Dobok?" name="dobok" id="dobok">
+                        
+                        <option value="yes">Yes</option>
+                        <option selected value="no">No</option>
+                    </select>
+                    </div>
+         
+                    <p>You're almost there. Just press submit and we'll email you the time and date of the next lesson. And before you go, tell us how you enjoyed our website!</p>
+                    <p><b>Total Cost: </b>€<span class="total">0</span></p>
+                    <div class="ui rating" data-max-rating="5"></div>
+         
+                    <div class="inline field">
+                    <button class="ui negative button" type="submit">Join</button>
+                    <button class="ui negative button" type="reset">Clear</button>
+                    </div>
+                             
+                </form>
+</main>
+</div>
+<br>
+<footer class="ui container">
+    <p style="float: left">Tigers Taewkwondo Club | All Rights Reserved 2023</p>
+    <a href="https://twitter.com"><i class="big black twitter icon" style="float: right"></i></a>
+    <a href="https://facebook.com"><i class="big black facebook icon" style="float: right"></i></a>
+    <a href="https://instagram.com"><i class="big black instagram icon" style="float: right"></i></a>
+
+</footer>
+    
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+  crossorigin="anonymous">
+</script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<script>$(document).ready(function(){$(".rating").rating();});</script>
+<script src="js/script.js"></script>
+<script>
+    $(() => {
+        $(".years").hide();
+        $('form').each(function() { this.reset() });
+        
+        $("input[name='exp']").on("change", function(){
+        if($('#yes').is(':checked')){
+            $(".years").show();
+            $("#experience").attr('required',true);
+        } 
+        else {
+            $(".years").hide();
+            $("#experience").attr('required',false).val(null);
+        }
+        });
+        
+        let dobokCost= 0
+        let ageCost=0
+        let totalCost=0
+        
+        const changeCost = () => {
+            totalCost = ageCost + dobokCost
+            $(".total").text(totalCost)
+        }
+        
+        $("#dob").on("change", function(){
+            let dob = new Date($("#dob").val())
+            let diff = Math.abs(Date.now() - dob)
+            let diffDate = new Date(diff)
+            if((diffDate.getYear() - 70) > 13)
+                {
+                    ageCost=15
+                }
+            else
+                {
+                    ageCost=8
+                }
+            changeCost()
+        });
+        
+        $("#dobok").on("change", function(){
+            let val = ($("#dobok").val())
+            console.log($("#dobok").val())
+            if((val == "yes"))
+                {
+                    dobokCost=20
+                }
+            else
+                {
+                    dobokCost=0
+                }
+            changeCost()
+        });
+        
+        
+        
+        
+        
+    })
+</script>
+    
+</body>
+</html>
+

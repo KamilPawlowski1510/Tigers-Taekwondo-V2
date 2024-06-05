@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <title>Tigers Taekwondo Club</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class = "ui grid stackable container">
+    <br>
+<nav class="ui top attached tabular menu">
+  <img class="ui image" src="images/logo.png" alt="Logo" height="70">
+  <a class="item" href= "index.html">Welcome</a>
+  <a class="item" href= "competitions.html">Competitions</a>
+  <a class="active item" href= "seminar.html">Seminar</a>
+  <a class="item" href= "register.html">Register</a>
+  <a class="item" href= "about.html">About</a>
+  <img class="ui image kick" src="images/kick.png" alt="Kicking Man" height="70">
+</nav>
+    
+   <header class="ui sixteen wide column">
+    <h1>Seminar</h1>
+    <h3>We Have Once Again Got the Opportunity to Train with the Famous Grand Master Nicholls</h3>
+    </header>
+    <main>
+<div class="ui stackable grid">
+   <div class="three column row">
+    <div class="left floated column"><img class="ui mobile centered image master" src="images/nicholls.jpg" alt="Grand Master Nicholls"></div>
+    <div class="right floated column"><img class="ui image seminar" src="images/seminar.jpg" alt="A Seminar"></div>
+    </div>
+    <div class="one column row"><p>For the seventh time in our organisations history we have a chance to train with the world renowned Grand Master Nicholls. We do no take this opportunity lightly and encourage all students who can to participate. It is a rare opportunity to be able to practice with a man anywhere near such a level of experience. The Seminar will take place on the 10th of January.</p></div>
+</div>
+        </main>
+</div>
+<br>
+<footer class="ui container">
+    <p style="float: left">Tigers Taewkwondo Club | All Rights Reserved 2023</p>
+    <a href="https://twitter.com"><i class="big black twitter icon" style="float: right"></i></a>
+    <a href="https://facebook.com"><i class="big black facebook icon" style="float: right"></i></a>
+    <a href="https://instagram.com"><i class="big black instagram icon" style="float: right"></i></a>
+
+</footer>
+    
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+  crossorigin="anonymous">
+</script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<script src="js/script.js"></script>
+    
+ <script> 
+$(() => {
+    $('.master').on({
+      mouseenter:(evt) => {
+        $('.master').attr("src", "images/nkick.jpg")
+      },
+      mouseleave:(evt) => {
+        $('.master').attr("src", "images/nicholls.jpg")
+      }
+    })
+    
+    $('.seminar').on({
+      mouseenter:(evt) => {
+        $('.seminar').attr("src", "images/seminar1.jpeg")
+      },
+      mouseleave:(evt) => {
+        $('.seminar').attr("src", "images/seminar.jpg")
+      }
+    })
+})
+</script>  
+    
+</body>
+</html>
+

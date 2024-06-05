@@ -1,0 +1,74 @@
+@font-face{
+    font-family: 'assassin';
+    src: url(../fonts/assassinninja.ttf)
+}
+
+body {
+    background-image: url(../images/scroll.jpg) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    background-attachment: fixed;
+}
+nav a {
+    font-family: assassin;
+}
+    
+.ui.tabular.menu{
+    border-bottom-color: black;
+}
+
+.ui.tabular.menu .item:hover{
+    background-color: burlywood;
+    color: darkred;
+}
+
+.ui.tabular.menu .active.item{
+    border-color: black;
+    background-color: tan;
+    color: black;
+}
+
+.ui.cards>.card>.content {
+  background-color: #d2b48c;
+}
+
+.ui.cards>.card>.content.extra a{
+  color: #fad25a;
+}
+
+.header:hover{
+    color: red !important;
+}
+
+p, label{
+    font-family: "open Sans" !important;
+    font-size: 1.3em !important;
+}
+
+h1, h3, th, td, h2{
+    font-family: "georgia";
+    font-style: italic;
+    font-weight: 100;
+}
+
+.kick{
+    transition: 700ms;
+    left: 30px;
+}
+
+.table1{
+    background-color: rgba(0,0,255,0) !important;
+}
+
+th{
+    background-color: burlywood !important;
+}
+
+tr{
+    background-color: bisque!important;
+}
+.selectable{
+    background-color: sandybrown !important;
+}

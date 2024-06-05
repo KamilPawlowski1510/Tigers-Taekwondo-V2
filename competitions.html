@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <title>Tigers Taekwondo Club</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class = "ui grid container">
+    <br>
+<nav class="ui top attached tabular menu">
+  <img class="ui image" src="images/logo.png" alt="Logo" height="70">
+  <a class="item" href= "index.html">Welcome</a>
+  <a class="active item" href= "competitions.html">Competitions</a>
+  <a class="item" href= "seminar.html">Seminar</a>
+  <a class="item" href= "register.html">Register</a>
+  <a class="item" href= "about.html">About</a>
+  <img class="ui image kick" src="images/kick.png" alt="Kicking Man" height="70">
+</nav>
+    
+    
+    
+  <header class="ui sixteen wide column">
+    <h1>Competitions</h1>
+    </header>
+    
+<main class="ui sixteen wide column gallery">
+        <a href="images/comp1.jpeg" data-fancybox="gallery" data-caption="Our medalist Michael O'Leary from the competition in July. Michael excels when it comes to patterns and has proven himself once again as one of our greatest.">
+                <img class="ui centered big image" src="images/comp1.jpeg" alt="Competition 1">
+        </a>
+        <h3 class="ui center aligned container">Click on the picture to see some of our clubs latest accomplishments</h3>
+        <a href="images/comp2.jpg" data-fancybox="gallery" data-caption="Steven Browne once again on a podium after needing to remind someone why it is that having a loose guard is generally considered a mistake."></a>
+        <a href="images/comp3.jpeg" data-fancybox="gallery" data-caption="Here is a past pupil, Ciara Clancy, all the way in Beirut, Lebanon. She left Ireland 3 years ago in pursuit of studying medicine. You can take the student out of Tigers but you can't take the Tigers out of the student!"></a>
+</main>
+        
+<div class="ui sixteen wide column table1">
+    
+    
+    
+</div>
+    
+</div>
+<br>
+<footer class="ui container">
+    <p style="float: left">Tigers Taewkwondo Club | All Rights Reserved 2023</p>
+    <a href="https://twitter.com"><i class="big black twitter icon" style="float: right"></i></a>
+    <a href="https://facebook.com"><i class="big black facebook icon" style="float: right"></i></a>
+    <a href="https://instagram.com"><i class="big black instagram icon" style="float: right"></i></a>
+
+</footer>
+    
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+  crossorigin="anonymous">
+</script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="js/script.js"></script>
+    
+<script  id = "compTimetable" type= "text/x-handlebars-template">
+{{#unless this}}
+  <h3>There are currently no competitions we are going to.</h3>
+{{else}}
+<h2>Upcoming Competitions</h2>
+  <table class="ui selectable table"  summary="Details of upcoming competitions">
+   <thead>
+    <tr>
+     <th>Name</th>
+     <th>Location</th>
+     <th>Cost</th>
+     <th>Date</th>
+     <th>Minimum Belt</th>
+    </tr>
+   </thead>
+   <tbody>
+    {{#each this}}
+     <tr>
+      <td>{{name}}</td>
+      <td>{{{location}}}</td>
+      <td>€{{{cost}}}</td>
+      <td>{{date}}</td>
+      <td style ="color: {{belt}} !important">{{belt}}</td>
+     </tr>
+    {{/each}}
+   </tbody>
+  </table>
+ {{/unless}}
+</script>
+
+<script>
+$(() => {
+    Fancybox.bind("[data-fancybox]");
+    
+    const competitions = [
+    {"name":"Waterford Championship",
+    "location":"Waterford",
+    "cost":"5",
+    "date":"12/6/23",
+    "belt":"white"
+    },
+    {"name":"Ireland Championship",
+    "location":"Dublin",
+    "cost":"30",
+    "date":"13/7/23",
+    "belt":"green"
+    },
+    {"name":"European Championship",
+    "location":"Germany",
+    "cost":"100",
+    "date":"14/8/23",
+    "belt":"blue"
+    },
+    {"name":"Juniors Championship",
+    "location":"Cork",
+    "cost":"15",
+    "date":"15/9/23",
+    "belt":"white"
+    },
+    {"name":"World Championship",
+    "location":"Korea",
+    "cost":"200",
+    "date":"16/10/23",
+    "belt":"black"
+    }
+]
+    
+    
+let template = Handlebars.compile($('#compTimetable').html());
+
+let output = template(competitions);
+
+$('.table1').html(output);
+    
+})
+</script>
+    
+</body>
+</html>
+
